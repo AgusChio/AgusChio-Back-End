@@ -1,0 +1,17 @@
+com\portafolioAgus\portafolio\models\Proyectos$ProyectosBuilder.class
+com\portafolioAgus\portafolio\dto\CertificacionesDTO.class
+com\portafolioAgus\portafolio\dto\ServiciosDTO.class
+com\portafolioAgus\portafolio\models\Servicios$ServiciosBuilder.class
+com\portafolioAgus\portafolio\repositories\ServiciosRepository.class
+com\portafolioAgus\portafolio\dto\PersonaDTO.class
+com\portafolioAgus\portafolio\PortafolioApplication.class
+com\portafolioAgus\portafolio\models\Servicios.class
+com\portafolioAgus\portafolio\models\Proyectos.class
+com\portafolioAgus\portafolio\models\Certificaciones.class
+com\portafolioAgus\portafolio\repositories\PersonaRepository.class
+com\portafolioAgus\portafolio\models\Persona$PersonaBuilder.class
+com\portafolioAgus\portafolio\dto\ProyectosDTO.class
+com\portafolioAgus\portafolio\models\Certificaciones$CertificacionesBuilder.class
+com\portafolioAgus\portafolio\repositories\CertificacionesRepository.class
+com\portafolioAgus\portafolio\models\Persona.class
+com\portafolioAgus\portafolio\repositories\ProyectosRepository.class
