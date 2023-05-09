@@ -9,7 +9,6 @@ import com.portafolioAgus.portafolio.service.PersonaServicies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -35,7 +34,7 @@ public class CertificacionesController {
         return certificacionesServicies.certificacionesToCertificacionesDTO(certificacionesServicies.findByIdCertificaciones(id));
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+
     @PostMapping("/agregar")
     public ResponseEntity<?> agregarCertificaciones(@RequestBody CertificacionesAplicationDTO certificaciones){
 
@@ -87,7 +86,6 @@ public class CertificacionesController {
         return new ResponseEntity<>("Certificado Creado", HttpStatus.CREATED);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/actualizar/{id}")
     public ResponseEntity<?> actualizarCertificaciones(@PathVariable Long id, @RequestBody CertificacionesAplicationDTO certificaciones){
 
@@ -144,7 +142,7 @@ public class CertificacionesController {
         return new ResponseEntity<>("Certificaciones Actualizada", HttpStatus.CREATED);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+
     @DeleteMapping("/borrar/{id}")
     public ResponseEntity<?> eliminarCertificacion(@PathVariable Long id) {
         certificacionesServicies.deleteCertificacionesById(id);
