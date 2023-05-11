@@ -2,8 +2,8 @@ package com.portafolioAgus.portafolio.controllers;
 
 import com.portafolioAgus.portafolio.dto.SobreMiAplicationDTO;
 import com.portafolioAgus.portafolio.dto.SobreMiDTO;
-import com.portafolioAgus.portafolio.models.Persona;
-import com.portafolioAgus.portafolio.models.SobreMi;
+import com.portafolioAgus.portafolio.entity.Persona;
+import com.portafolioAgus.portafolio.entity.SobreMi;
 import com.portafolioAgus.portafolio.service.PersonaServicies;
 import com.portafolioAgus.portafolio.service.SobreMiServicies;
 import org.springframework.beans.factory.annotation.Autowired;

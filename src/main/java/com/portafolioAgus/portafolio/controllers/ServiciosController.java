@@ -3,8 +3,8 @@ package com.portafolioAgus.portafolio.controllers;
 
 import com.portafolioAgus.portafolio.dto.ServicioAplicationDTO;
 import com.portafolioAgus.portafolio.dto.ServiciosDTO;
-import com.portafolioAgus.portafolio.models.Persona;
-import com.portafolioAgus.portafolio.models.Servicios;
+import com.portafolioAgus.portafolio.entity.Persona;
+import com.portafolioAgus.portafolio.entity.Servicios;
 import com.portafolioAgus.portafolio.service.PersonaServicies;
 import com.portafolioAgus.portafolio.service.ServiciosServicies;
 import org.springframework.beans.factory.annotation.Autowired;

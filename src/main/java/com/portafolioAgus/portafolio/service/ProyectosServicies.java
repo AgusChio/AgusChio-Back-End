@@ -2,7 +2,7 @@ package com.portafolioAgus.portafolio.service;
 
 
 import com.portafolioAgus.portafolio.dto.ProyectosDTO;
-import com.portafolioAgus.portafolio.models.Proyectos;
+import com.portafolioAgus.portafolio.entity.Proyectos;
 import com.portafolioAgus.portafolio.repositories.ProyectosRepository;
 import com.portafolioAgus.portafolio.service.impl.ImplProyectosService;
 import org.springframework.beans.BeanUtils;

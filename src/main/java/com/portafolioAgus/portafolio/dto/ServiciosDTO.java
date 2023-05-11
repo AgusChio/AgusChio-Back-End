@@ -1,6 +1,6 @@
 package com.portafolioAgus.portafolio.dto;
 
-import com.portafolioAgus.portafolio.models.Servicios;
+import com.portafolioAgus.portafolio.entity.Servicios;
 import lombok.*;
 
 @Getter

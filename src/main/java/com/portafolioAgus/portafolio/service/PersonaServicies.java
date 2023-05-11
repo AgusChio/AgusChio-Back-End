@@ -1,16 +1,18 @@
 package com.portafolioAgus.portafolio.service;
 
 import com.portafolioAgus.portafolio.dto.PersonaDTO;
-import com.portafolioAgus.portafolio.models.Persona;
+import com.portafolioAgus.portafolio.entity.Persona;
 import com.portafolioAgus.portafolio.repositories.PersonaRepository;
 import com.portafolioAgus.portafolio.service.impl.ImplPersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@Transactional
 public class PersonaServicies implements ImplPersonaService {
     @Autowired
     PersonaRepository personaRepository;

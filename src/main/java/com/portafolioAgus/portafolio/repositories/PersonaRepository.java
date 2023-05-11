@@ -1,7 +1,7 @@
 package com.portafolioAgus.portafolio.repositories;
 
 
-import com.portafolioAgus.portafolio.models.Persona;
+import com.portafolioAgus.portafolio.entity.Persona;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

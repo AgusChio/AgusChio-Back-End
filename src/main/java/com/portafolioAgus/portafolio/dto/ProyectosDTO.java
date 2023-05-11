@@ -1,6 +1,6 @@
 package com.portafolioAgus.portafolio.dto;
 
-import com.portafolioAgus.portafolio.models.Proyectos;
+import com.portafolioAgus.portafolio.entity.Proyectos;
 import lombok.*;
 
 

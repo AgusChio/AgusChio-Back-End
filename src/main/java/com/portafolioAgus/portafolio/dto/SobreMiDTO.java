@@ -1,6 +1,6 @@
 package com.portafolioAgus.portafolio.dto;
 
-import com.portafolioAgus.portafolio.models.SobreMi;
+import com.portafolioAgus.portafolio.entity.SobreMi;
 import lombok.*;
 
 @Getter

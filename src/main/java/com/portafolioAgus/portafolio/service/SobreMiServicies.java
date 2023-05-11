@@ -1,7 +1,7 @@
 package com.portafolioAgus.portafolio.service;
 
 import com.portafolioAgus.portafolio.dto.SobreMiDTO;
-import com.portafolioAgus.portafolio.models.SobreMi;
+import com.portafolioAgus.portafolio.entity.SobreMi;
 import com.portafolioAgus.portafolio.repositories.SobreMiRepository;
 import com.portafolioAgus.portafolio.service.impl.ImplSobreMiService;
 import org.springframework.beans.BeanUtils;
@@ -47,32 +47,6 @@ public class SobreMiServicies implements ImplSobreMiService {
         return sobreMi;
     }
 
-    @Override
-    public void updateParrafo1(Long id, String parrafo1) {
-        SobreMi sobreMi = sobreMiRepository.findById(id).orElse(null);
-        if (sobreMi != null) {
-            sobreMi.setParrafo1(parrafo1);
-            saveSobreMi(sobreMi);
-        }
-    }
-
-    @Override
-    public void updateParrafo2(Long id, String parrafo2) {
-        SobreMi sobreMi = sobreMiRepository.findById(id).orElse(null);
-        if (sobreMi != null) {
-            sobreMi.setParrafo2(parrafo2);
-            saveSobreMi(sobreMi);
-        }
-    }
-
-    @Override
-    public void updateCV(Long id, String cv) {
-        SobreMi sobreMi = sobreMiRepository.findById(id).orElse(null);
-        if (sobreMi != null) {
-            sobreMi.setCv(cv);
-            saveSobreMi(sobreMi);
-        }
-    }
 
     @Override
     public void saveSobreMi(SobreMi sobreMi) {

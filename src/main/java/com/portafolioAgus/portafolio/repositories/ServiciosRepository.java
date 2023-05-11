@@ -1,6 +1,6 @@
 package com.portafolioAgus.portafolio.repositories;
 
-import com.portafolioAgus.portafolio.models.Servicios;
+import com.portafolioAgus.portafolio.entity.Servicios;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

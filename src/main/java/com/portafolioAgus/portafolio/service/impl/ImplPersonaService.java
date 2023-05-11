@@ -1,7 +1,7 @@
 package com.portafolioAgus.portafolio.service.impl;
 
 import com.portafolioAgus.portafolio.dto.PersonaDTO;
-import com.portafolioAgus.portafolio.models.Persona;
+import com.portafolioAgus.portafolio.entity.Persona;
 
 import java.util.List;
 

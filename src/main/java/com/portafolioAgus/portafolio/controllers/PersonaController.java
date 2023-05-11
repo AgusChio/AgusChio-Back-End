@@ -2,7 +2,7 @@ package com.portafolioAgus.portafolio.controllers;
 
 
 import com.portafolioAgus.portafolio.dto.PersonaDTO;
-import com.portafolioAgus.portafolio.models.Persona;
+import com.portafolioAgus.portafolio.entity.Persona;
 import com.portafolioAgus.portafolio.service.PersonaServicies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,6 +1,6 @@
 package com.portafolioAgus.portafolio.dto;
 
-import com.portafolioAgus.portafolio.models.*;
+import com.portafolioAgus.portafolio.entity.*;
 import lombok.*;
 
 import java.util.List;
@@ -26,11 +26,12 @@ public class PersonaDTO {
 
     private List<ProyectosDTO> proyectos;
 
-    private List<CertificacionesDTO> certificaciones;
+    private List<EducacionDTO> certificaciones;
 
     private List<ServiciosDTO> servicios;
 
-    private List<RedesSocialesDTO> redesSociales;
+    private List<SkillDTO> skills;
+
 
     public PersonaDTO(Persona persona) {
         id = persona.getId();
@@ -41,8 +42,8 @@ public class PersonaDTO {
         descripcion = persona.getDescripcion();
         sobreMi = persona.getSobreMi().stream().map(sobreMi1 -> new SobreMiDTO(sobreMi1)).collect(Collectors.toList());
         proyectos = persona.getProyectos().stream().map(proyecto -> new ProyectosDTO(proyecto)).collect(Collectors.toList());
-        certificaciones = persona.getCertificaciones().stream().map(certificacion -> new CertificacionesDTO(certificacion)).collect(Collectors.toList());
+        certificaciones = persona.getCertificaciones().stream().map(certificacion -> new EducacionDTO(certificacion)).collect(Collectors.toList());
         servicios = persona.getServicios().stream().map(servicio -> new ServiciosDTO(servicio)).collect(Collectors.toList());
-        redesSociales = persona.getRedesSociales().stream().map(redSocial -> new RedesSocialesDTO(redSocial)).collect(Collectors.toList());
+        skills = persona.getSkills().stream().map(skills1 -> new SkillDTO(skills1)).collect(Collectors.toList());
     }
 }
