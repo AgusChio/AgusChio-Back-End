@@ -8,15 +8,15 @@ import java.util.List;
 
 public interface ImplEducacionService {
 
-    List<Educacion> findAllCertificaciones();
+    List<Educacion> findAllEducacion();
 
-    List<EducacionDTO> listCertificacionToListCertificacionesDTO(List<Educacion> listadoCertificaciones);
+    List<EducacionDTO> listEducacionToListEducacionDTO(List<Educacion> listadoEducacion);
 
-    EducacionDTO certificacionesToCertificacionesDTO(Educacion educacion);
+    EducacionDTO EducacionToEducacionDTO(Educacion educacion);
 
-    Educacion findByIdCertificaciones(Long id);
+    Educacion findByIdEducacion(Long id);
 
-    void saveCertificaciones(Educacion educacion);
+    void saveEducacion(Educacion educacion);
 
-    void deleteCertificacionesById(Long id);
+    void deleteEducacionById(Long id);
 }

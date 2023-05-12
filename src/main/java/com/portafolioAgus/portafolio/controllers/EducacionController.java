@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/certificaciones")
+@RequestMapping("/api/educacion")
 public class EducacionController {
 
     @Autowired
@@ -24,55 +24,55 @@ public class EducacionController {
     private PersonaServicies personaServicies;
 
 
-    @GetMapping("/todasCertificaciones")
-    public List<EducacionDTO> listadoCertificaciones(){
-        return educacionServicies.listCertificacionToListCertificacionesDTO(educacionServicies.findAllCertificaciones());
+    @GetMapping("/todasEducaciones")
+    public List<EducacionDTO> listadoEducacion(){
+        return educacionServicies.listEducacionToListEducacionDTO(educacionServicies.findAllEducacion());
     }
 
     @GetMapping("/{id}")
-    public EducacionDTO buscarCertificacionPorId(@PathVariable Long id) {
-        return educacionServicies.certificacionesToCertificacionesDTO(educacionServicies.findByIdCertificaciones(id));
+    public EducacionDTO buscarEducacionPorId(@PathVariable Long id) {
+        return educacionServicies.EducacionToEducacionDTO(educacionServicies.findByIdEducacion(id));
     }
 
 
     @PostMapping("/agregar")
-    public ResponseEntity<?> agregarCertificaciones(@RequestBody EducacionAplicationDTO certificaciones){
+    public ResponseEntity<?> agregarEducacion(@RequestBody EducacionAplicationDTO educacion){
 
-        String nombre = certificaciones.getNombre();
-        String apellido = certificaciones.getApellido();
+        String nombre = educacion.getNombre();
+        String apellido = educacion.getApellido();
 
         Persona persona = personaServicies.buscarPorNombreYApellido(nombre, apellido);
 
 
-        if (certificaciones.getEntidadEducativa().isEmpty()){
+        if (educacion.getEntidadEducativa().isEmpty()){
             return new ResponseEntity<>("Nombre de la entidad educativa vacia", HttpStatus.FORBIDDEN);
         }
 
-        if (certificaciones.getInicio() == null){
+        if (educacion.getInicio() == null){
             return new ResponseEntity<>("Fecha de inicio vacia", HttpStatus.FORBIDDEN);
         }
 
-        if (certificaciones.getFin() == null){
+        if (educacion.getFin() == null){
             return new ResponseEntity<>("Fecha de fin vacia", HttpStatus.FORBIDDEN);
         }
 
-        if (certificaciones.getInicio().equals(certificaciones.getFin()) || certificaciones.getFin().equals(certificaciones.getInicio())){
+        if (educacion.getInicio().equals(educacion.getFin()) || educacion.getFin().equals(educacion.getInicio())){
             return new ResponseEntity<>("La fecha de inicio no puede ser igual a la fecha final o viceversa", HttpStatus.FORBIDDEN);
         }
 
-        if (certificaciones.getInicio().isAfter(certificaciones.getFin())){
+        if (educacion.getInicio().isAfter(educacion.getFin())){
             return new ResponseEntity<>("La fecha inicial no puede ser posterior a la fecha final", HttpStatus.FORBIDDEN);
         }
 
-        if (certificaciones.getFin().isBefore(certificaciones.getInicio())){
+        if (educacion.getFin().isBefore(educacion.getInicio())){
             return new ResponseEntity<>("La fecha final no puede ser antes a la fecha inicial", HttpStatus.FORBIDDEN);
         }
 
-        if (certificaciones.getTitulo().isEmpty()){
+        if (educacion.getTitulo().isEmpty()){
             return new ResponseEntity<>("El título esta vacio", HttpStatus.FORBIDDEN);
         }
 
-        if (certificaciones.getImagenCertificado().isEmpty()){
+        if (educacion.getImagenCertificado().isEmpty()){
             return new ResponseEntity<>("La imagen esta vacia", HttpStatus.FORBIDDEN);
         }
 
@@ -80,49 +80,49 @@ public class EducacionController {
             return new ResponseEntity<>("No se encontró la persona correspondiente al nombre y apellido proporcionados", HttpStatus.FORBIDDEN);
         }
 
-        Educacion nuevaCertificacion = new Educacion(certificaciones.getTitulo(), certificaciones.getEntidadEducativa(),certificaciones.getInicio(),certificaciones.getFin(), certificaciones.getImagenCertificado(), persona);
-        educacionServicies.saveCertificaciones(nuevaCertificacion);
+        Educacion nuevaEducacion = new Educacion(educacion.getTitulo(), educacion.getEntidadEducativa(),educacion.getInicio(),educacion.getFin(), educacion.getImagenCertificado(), persona);
+        educacionServicies.saveEducacion(nuevaEducacion);
 
         return new ResponseEntity<>("Certificado Creado", HttpStatus.CREATED);
     }
 
     @PutMapping("/actualizar/{id}")
-    public ResponseEntity<?> actualizarCertificaciones(@PathVariable Long id, @RequestBody EducacionAplicationDTO certificaciones){
+    public ResponseEntity<?> actualizarCertificaciones(@PathVariable Long id, @RequestBody EducacionAplicationDTO educacion){
 
-        Educacion educacionActualizada = educacionServicies.findByIdCertificaciones(id);
-        String nombre = certificaciones.getNombre();
-        String apellido = certificaciones.getApellido();
+        Educacion educacionActualizada = educacionServicies.findByIdEducacion(id);
+        String nombre = educacion.getNombre();
+        String apellido = educacion.getApellido();
         Persona persona = personaServicies.buscarPorNombreYApellido(nombre, apellido);
 
-        if (certificaciones.getEntidadEducativa().isEmpty()){
+        if (educacion.getEntidadEducativa().isEmpty()){
             return new ResponseEntity<>("Nombre de la entidad educativa vacia", HttpStatus.FORBIDDEN);
         }
 
-        if (certificaciones.getInicio() == null){
+        if (educacion.getInicio() == null){
             return new ResponseEntity<>("Fecha de inicio vacia", HttpStatus.FORBIDDEN);
         }
 
-        if (certificaciones.getFin() == null){
+        if (educacion.getFin() == null){
             return new ResponseEntity<>("Fecha de fin vacia", HttpStatus.FORBIDDEN);
         }
 
-        if (certificaciones.getInicio().equals(certificaciones.getFin()) || certificaciones.getFin().equals(certificaciones.getInicio())){
+        if (educacion.getInicio().equals(educacion.getFin()) || educacion.getFin().equals(educacion.getInicio())){
             return new ResponseEntity<>("La fecha de inicio no puede ser igual a la fecha final o viceversa", HttpStatus.FORBIDDEN);
         }
 
-        if (certificaciones.getInicio().isAfter(certificaciones.getFin())){
+        if (educacion.getInicio().isAfter(educacion.getFin())){
             return new ResponseEntity<>("La fecha inicial no puede ser posterior a la fecha final", HttpStatus.FORBIDDEN);
         }
 
-        if (certificaciones.getFin().isBefore(certificaciones.getInicio())){
+        if (educacion.getFin().isBefore(educacion.getInicio())){
             return new ResponseEntity<>("La fecha final no puede ser antes a la fecha inicial", HttpStatus.FORBIDDEN);
         }
 
-        if (certificaciones.getTitulo().isEmpty()){
+        if (educacion.getTitulo().isEmpty()){
             return new ResponseEntity<>("El título esta vacio", HttpStatus.FORBIDDEN);
         }
 
-        if (certificaciones.getImagenCertificado().isEmpty()){
+        if (educacion.getImagenCertificado().isEmpty()){
             return new ResponseEntity<>("La imagen esta vacia", HttpStatus.FORBIDDEN);
         }
 
@@ -130,14 +130,14 @@ public class EducacionController {
             return new ResponseEntity<>("No se encontró la persona correspondiente al nombre y apellido proporcionados", HttpStatus.FORBIDDEN);
         }
 
-        educacionActualizada.setTitulo(certificaciones.getTitulo());
-        educacionActualizada.setEntidadEducativa(certificaciones.getEntidadEducativa());
-        educacionActualizada.setInicio(certificaciones.getInicio());
-        educacionActualizada.setFin(certificaciones.getFin());
+        educacionActualizada.setTitulo(educacion.getTitulo());
+        educacionActualizada.setEntidadEducativa(educacion.getEntidadEducativa());
+        educacionActualizada.setInicio(educacion.getInicio());
+        educacionActualizada.setFin(educacion.getFin());
         educacionActualizada.setImagenCertificado(educacionActualizada.getImagenCertificado());
         educacionActualizada.setPersona(persona);
 
-        educacionServicies.saveCertificaciones(educacionActualizada);
+        educacionServicies.saveEducacion(educacionActualizada);
 
         return new ResponseEntity<>("Certificaciones Actualizada", HttpStatus.CREATED);
     }
@@ -145,7 +145,7 @@ public class EducacionController {
 
     @DeleteMapping("/borrar/{id}")
     public ResponseEntity<?> eliminarCertificacion(@PathVariable Long id) {
-        educacionServicies.deleteCertificacionesById(id);
+        educacionServicies.deleteEducacionById(id);
         return new ResponseEntity<>("Certificacion Eliminada", HttpStatus.ACCEPTED);
     }
 }

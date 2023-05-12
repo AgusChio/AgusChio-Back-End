@@ -17,36 +17,36 @@ import java.util.stream.Collectors;
 public class EducacionServicies implements ImplEducacionService {
 
     @Autowired
-    EducacionRepository certificacionesRepository;
+    EducacionRepository educacionRepository;
 
     @Override
-    public List<Educacion> findAllCertificaciones() {
-        return certificacionesRepository.findAll();
+    public List<Educacion> findAllEducacion() {
+        return educacionRepository.findAll();
     }
 
     @Override
-    public List<EducacionDTO> listCertificacionToListCertificacionesDTO(List<Educacion> listadoCertificaciones){
-        return certificacionesRepository.findAll().stream().map(certificaciones -> new EducacionDTO(certificaciones)).collect(Collectors.toList());
+    public List<EducacionDTO> listEducacionToListEducacionDTO(List<Educacion> listadoEducacion){
+        return educacionRepository.findAll().stream().map(educacion -> new EducacionDTO(educacion)).collect(Collectors.toList());
     }
 
     @Override
-    public EducacionDTO certificacionesToCertificacionesDTO(Educacion educacion) {
+    public EducacionDTO EducacionToEducacionDTO(Educacion educacion) {
         return new EducacionDTO(educacion);
     }
 
     @Override
-    public Educacion findByIdCertificaciones(Long id) {
-        return certificacionesRepository.findById(id).orElse(null);
+    public Educacion findByIdEducacion(Long id) {
+        return educacionRepository.findById(id).orElse(null);
     }
 
 
     @Override
-    public void saveCertificaciones(Educacion educacion) {
-        certificacionesRepository.save(educacion);
+    public void saveEducacion(Educacion educacion) {
+        educacionRepository.save(educacion);
     }
 
     @Override
-    public void deleteCertificacionesById(Long id) {
-        certificacionesRepository.deleteById(id);
+    public void deleteEducacionById(Long id) {
+        educacionRepository.deleteById(id);
     }
 }
