@@ -3,6 +3,8 @@ package com.portafolioAgus.portafolio.dto;
 import com.portafolioAgus.portafolio.entity.Proyectos;
 import lombok.*;
 
+import java.time.LocalDate;
+
 
 @Getter
 public class ProyectosDTO {
@@ -11,6 +13,10 @@ public class ProyectosDTO {
     private String nombreProyecto;
 
     private String imagen;
+
+    private String descripcion;
+
+    private LocalDate fechaRealizacion;
 
     private String urlVideo;
 
@@ -23,6 +29,8 @@ public class ProyectosDTO {
         id = proyectos.getId();
         nombreProyecto = proyectos.getNombreProyecto();
         imagen = proyectos.getImagen();
+        descripcion = proyectos.getDescripcion();
+        fechaRealizacion = proyectos.getFechaRealizacion();
         urlVideo = proyectos.getUrlVideo();
         urlDeploy = proyectos.getUrlDeploy();
         urlGitHub = proyectos.getUrlGitHub();

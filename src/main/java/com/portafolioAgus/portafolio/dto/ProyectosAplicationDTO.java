@@ -2,11 +2,17 @@ package com.portafolioAgus.portafolio.dto;
 
 import lombok.Getter;
 
+import java.time.LocalDate;
+
 @Getter
 public class ProyectosAplicationDTO {
     private String nombreProyecto;
 
     private String imagen;
+
+    private String descripcion;
+
+    private LocalDate fechaRealizacion;
 
     private String urlVideo;
 

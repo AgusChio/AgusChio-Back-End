@@ -3,6 +3,7 @@ package com.portafolioAgus.portafolio.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -20,6 +21,9 @@ public class Proyectos {
 
     private String imagen;
 
+    private String descripcion;
+
+    private LocalDate fechaRealizacion;
     private String urlVideo;
 
     private String urlGitHub;
@@ -29,9 +33,11 @@ public class Proyectos {
     @ManyToOne
     private Persona persona;
 
-    public Proyectos(String nombreProyecto, String imagen, String urlVideo, String urlGitHub, String urlDeploy, Persona persona) {
+    public Proyectos(String nombreProyecto, String imagen, String descripcion,LocalDate fechaRealizacion ,String urlVideo, String urlGitHub, String urlDeploy, Persona persona) {
         this.nombreProyecto = nombreProyecto;
         this.imagen = imagen;
+        this.descripcion = descripcion;
+        this.fechaRealizacion = fechaRealizacion;
         this.urlVideo = urlVideo;
         this.urlGitHub = urlGitHub;
         this.urlDeploy = urlDeploy;

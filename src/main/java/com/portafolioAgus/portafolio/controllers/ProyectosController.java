@@ -51,6 +51,14 @@ public class ProyectosController {
             new ResponseEntity<>("Imagen vacia", HttpStatus.FORBIDDEN);
         }
 
+        if (proyectos.getDescripcion().isEmpty()){
+            new ResponseEntity<>("Descripcion Vacia", HttpStatus.FORBIDDEN);
+        }
+
+        if (proyectos.getFechaRealizacion() == null){
+            new ResponseEntity<>("Por favor, ingrese una fecha de realización del proyecto ", HttpStatus.FORBIDDEN);
+        }
+
         if (proyectos.getUrlVideo().isEmpty()){
             new ResponseEntity<>("La url no puede estar vacia, como minimo puede decir que no tiene url", HttpStatus.FORBIDDEN);
         }
@@ -67,7 +75,7 @@ public class ProyectosController {
             return new ResponseEntity<>("No se encontró la persona correspondiente al nombre y apellido proporcionados", HttpStatus.FORBIDDEN);
         }
 
-        Proyectos proyectoNuevo = new Proyectos(proyectos.getNombreProyecto(), proyectos.getImagen(), proyectos.getUrlVideo(), proyectos.getUrlGitHub(), proyectos.getUrlDeploy(), persona);
+        Proyectos proyectoNuevo = new Proyectos(proyectos.getNombreProyecto(), proyectos.getImagen(), proyectos.getDescripcion(),proyectos.getFechaRealizacion(), proyectos.getUrlVideo(), proyectos.getUrlGitHub(), proyectos.getUrlDeploy(), persona);
         proyectosServicies.saveProyectos(proyectoNuevo);
 
         return new ResponseEntity<>("Proyecto Creado", HttpStatus.CREATED);
@@ -91,6 +99,14 @@ public class ProyectosController {
             new ResponseEntity<>("Imagen vacia", HttpStatus.FORBIDDEN);
         }
 
+        if (proyectos.getDescripcion().isEmpty()){
+            new ResponseEntity<>("Descripcion Vacia", HttpStatus.FORBIDDEN);
+        }
+
+        if (proyectos.getFechaRealizacion() == null){
+            new ResponseEntity<>("Por favor, ingrese una fecha de realización del proyecto ", HttpStatus.FORBIDDEN);
+        }
+
         if (proyectos.getUrlVideo().isEmpty()){
             new ResponseEntity<>("La url no puede estar vacia, como minimo puede decir que no tiene url", HttpStatus.FORBIDDEN);
         }
@@ -109,6 +125,8 @@ public class ProyectosController {
 
         proyectoActualizado.setNombreProyecto(proyectos.getNombreProyecto());
         proyectoActualizado.setImagen(proyectos.getImagen());
+        proyectoActualizado.setDescripcion(proyectos.getDescripcion());
+        proyectoActualizado.setFechaRealizacion(proyectos.getFechaRealizacion());
         proyectoActualizado.setUrlVideo(proyectos.getUrlVideo());
         proyectoActualizado.setUrlDeploy(proyectos.getUrlDeploy());
         proyectoActualizado.setUrlGitHub(proyectos.getUrlGitHub());
