@@ -83,11 +83,11 @@ public class EducacionController {
         Educacion nuevaEducacion = new Educacion(educacion.getTitulo(), educacion.getEntidadEducativa(),educacion.getInicio(),educacion.getFin(), educacion.getImagenCertificado(), persona);
         educacionServicies.saveEducacion(nuevaEducacion);
 
-        return new ResponseEntity<>("Certificado Creado", HttpStatus.CREATED);
+        return new ResponseEntity<>("Educacion Creada", HttpStatus.CREATED);
     }
 
     @PutMapping("/actualizar/{id}")
-    public ResponseEntity<?> actualizarCertificaciones(@PathVariable Long id, @RequestBody EducacionAplicationDTO educacion){
+    public ResponseEntity<?> actualizarEducacion(@PathVariable Long id, @RequestBody EducacionAplicationDTO educacion){
 
         Educacion educacionActualizada = educacionServicies.findByIdEducacion(id);
         String nombre = educacion.getNombre();
@@ -139,13 +139,13 @@ public class EducacionController {
 
         educacionServicies.saveEducacion(educacionActualizada);
 
-        return new ResponseEntity<>("Certificaciones Actualizada", HttpStatus.CREATED);
+        return new ResponseEntity<>("Educacion Actualizada", HttpStatus.CREATED);
     }
 
 
     @DeleteMapping("/borrar/{id}")
     public ResponseEntity<?> eliminarCertificacion(@PathVariable Long id) {
         educacionServicies.deleteEducacionById(id);
-        return new ResponseEntity<>("Certificacion Eliminada", HttpStatus.ACCEPTED);
+        return new ResponseEntity<>("Educacion Eliminada", HttpStatus.ACCEPTED);
     }
 }

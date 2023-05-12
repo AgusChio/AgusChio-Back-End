@@ -35,7 +35,7 @@ public class Persona {
     private Set<Proyectos> proyectos = new HashSet<>();
 
     @OneToMany(mappedBy = "persona", fetch = FetchType.LAZY, orphanRemoval = true)
-    private Set<Educacion> certificaciones = new HashSet<>();
+    private Set<Educacion> educacion = new HashSet<>();
 
     @OneToMany(mappedBy = "persona", fetch = FetchType.LAZY, orphanRemoval = true)
     private Set<Servicios> servicios = new HashSet<>();

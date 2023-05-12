@@ -26,7 +26,7 @@ public class PersonaDTO {
 
     private List<ProyectosDTO> proyectos;
 
-    private List<EducacionDTO> certificaciones;
+    private List<EducacionDTO> educacion;
 
     private List<ServiciosDTO> servicios;
 
@@ -42,7 +42,7 @@ public class PersonaDTO {
         descripcion = persona.getDescripcion();
         sobreMi = persona.getSobreMi().stream().map(sobreMi1 -> new SobreMiDTO(sobreMi1)).collect(Collectors.toList());
         proyectos = persona.getProyectos().stream().map(proyecto -> new ProyectosDTO(proyecto)).collect(Collectors.toList());
-        certificaciones = persona.getCertificaciones().stream().map(certificacion -> new EducacionDTO(certificacion)).collect(Collectors.toList());
+        educacion = persona.getEducacion().stream().map(educacion1 ->  new EducacionDTO(educacion1)).collect(Collectors.toList());
         servicios = persona.getServicios().stream().map(servicio -> new ServiciosDTO(servicio)).collect(Collectors.toList());
         skills = persona.getSkills().stream().map(skills1 -> new SkillDTO(skills1)).collect(Collectors.toList());
     }
