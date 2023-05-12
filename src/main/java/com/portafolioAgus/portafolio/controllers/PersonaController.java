@@ -47,11 +47,15 @@ public class PersonaController {
             new ResponseEntity<>("Imagen vacia", HttpStatus.FORBIDDEN);
         }
 
+        if (persona.getBanner().isEmpty()){
+            new ResponseEntity<>("Banner vacio", HttpStatus.FORBIDDEN);
+        }
+
         if (persona.getDescripcion().isEmpty()){
             new ResponseEntity<>("Descripción vacia", HttpStatus.FORBIDDEN);
         }
 
-        Persona personaNueva = new Persona(persona.getNombre(), persona.getApellido(), persona.getTitulo(), persona.getImagen(), persona.getDescripcion());
+        Persona personaNueva = new Persona(persona.getNombre(), persona.getApellido(), persona.getTitulo(), persona.getImagen(), persona.getBanner(), persona.getDescripcion());
         personaServicies.savePersona(personaNueva);
 
         return new ResponseEntity<>("Persona Creada", HttpStatus.CREATED);
@@ -86,6 +90,7 @@ public class PersonaController {
         personaActualizada.setApellido(persona.getApellido());
         personaActualizada.setTitulo(persona.getTitulo());
         personaActualizada.setImagen(persona.getImagen());
+        personaActualizada.setBanner(persona.getBanner());
         personaActualizada.setDescripcion(persona.getDescripcion());
 
         personaServicies.savePersona(personaActualizada);

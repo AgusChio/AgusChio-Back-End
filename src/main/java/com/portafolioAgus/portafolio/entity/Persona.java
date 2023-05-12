@@ -28,6 +28,8 @@ public class Persona {
 
     private String imagen;
 
+    private String banner;
+
     @Column(length = 1400)
     private String descripcion;
 
@@ -46,11 +48,12 @@ public class Persona {
     @OneToMany(mappedBy = "persona", fetch = FetchType.LAZY, orphanRemoval = true)
     private Set<Skills> skills = new HashSet<>();
 
-    public Persona(String nombre, String apellido, String titulo, String imagen, String descripcion) {
+    public Persona(String nombre, String apellido, String titulo, String imagen, String banner,String descripcion) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.titulo = titulo;
         this.imagen = imagen;
+        this.banner = banner;
         this.descripcion = descripcion;
     }
 }

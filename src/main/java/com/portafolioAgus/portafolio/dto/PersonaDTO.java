@@ -20,6 +20,8 @@ public class PersonaDTO {
 
     private String imagen;
 
+    private String banner;
+
     private String descripcion;
 
     private List<SobreMiDTO> sobreMi;
@@ -39,6 +41,7 @@ public class PersonaDTO {
         apellido = persona.getApellido();
         titulo = persona.getTitulo();
         imagen = persona.getImagen();
+        banner = persona.getBanner();
         descripcion = persona.getDescripcion();
         sobreMi = persona.getSobreMi().stream().map(sobreMi1 -> new SobreMiDTO(sobreMi1)).collect(Collectors.toList());
         proyectos = persona.getProyectos().stream().map(proyecto -> new ProyectosDTO(proyecto)).collect(Collectors.toList());
