@@ -63,6 +63,11 @@ public class SobreMiController {
     public ResponseEntity<?> actualizarSobreMiCompleto(@PathVariable Long id, @RequestBody SobreMiAplicationDTO sobreMi) {
         SobreMi sobreMiActualizado = sobreMiServicies.findByIdSobreMi(id);
 
+        String nombre = sobreMi.getNombre();
+        String apellido = sobreMi.getApellido();
+
+        Persona persona = personaServicies.buscarPorNombreYApellido(nombre, apellido);
+
         if (sobreMi.getParrafo1().isEmpty()){
             new ResponseEntity<>("Parrafo vacio", HttpStatus.FORBIDDEN);
         }
@@ -73,6 +78,10 @@ public class SobreMiController {
 
         if (sobreMi.getCv().isEmpty()){
             new ResponseEntity<>("Cv vacio, se puede poner que no tiene", HttpStatus.FORBIDDEN);
+        }
+
+        if (persona == null){
+            return new ResponseEntity<>("No se encontró la persona correspondiente al nombre y apellido proporcionados", HttpStatus.FORBIDDEN);
         }
 
         sobreMiActualizado.setCv(sobreMi.getCv());
