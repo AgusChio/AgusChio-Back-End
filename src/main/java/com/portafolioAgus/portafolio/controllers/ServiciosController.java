@@ -84,7 +84,6 @@ public class ServiciosController {
 
         servicioActulizado.setTituloServicio(servicios.getTituloServicio());
         servicioActulizado.setDescripcion(servicios.getDescripcion());
-        servicioActulizado.setPersona(persona);
 
         serviciosServicies.saveServicios(servicioActulizado);
 
