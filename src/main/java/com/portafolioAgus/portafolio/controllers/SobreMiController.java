@@ -86,7 +86,7 @@ public class SobreMiController {
 
         sobreMiActualizado.setCv(sobreMi.getCv());
         sobreMiActualizado.setParrafo1(sobreMi.getParrafo1());
-        sobreMiActualizado.setParrafo2(sobreMiActualizado.getParrafo2());
+        sobreMiActualizado.setParrafo2(sobreMi.getParrafo2());
 
         sobreMiServicies.saveSobreMi(sobreMiActualizado);
 
