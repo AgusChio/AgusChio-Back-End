@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "https://portafolioagustina-45863.web.app")
 @RestController
 @RequestMapping("/api/educacion")
 public class EducacionController {

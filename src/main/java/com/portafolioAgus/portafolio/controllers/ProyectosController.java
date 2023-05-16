@@ -16,6 +16,7 @@ import java.util.List;
 
 
 @RestController
+@CrossOrigin(origins = "https://portafolioagustina-45863.web.app")
 @RequestMapping("/api/proyectos")
 public class ProyectosController {
 

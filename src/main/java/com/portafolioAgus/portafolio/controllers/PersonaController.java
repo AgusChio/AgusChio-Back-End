@@ -13,6 +13,7 @@ import java.util.List;
 
 
 @RestController
+@CrossOrigin(origins = "https://portafolioagustina-45863.web.app")
 @RequestMapping("/api/persona")
 public class PersonaController {
 
