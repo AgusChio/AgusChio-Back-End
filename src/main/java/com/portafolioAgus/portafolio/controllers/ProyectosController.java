@@ -16,7 +16,7 @@ import java.util.List;
 
 
 @RestController
-@CrossOrigin(origins = "https://portafolioagustina-45863.web.app")
+@CrossOrigin(origins = "https://main--cheerful-dolphin-8f9864.netlify.app/")
 @RequestMapping("/api/proyectos")
 public class ProyectosController {
 
