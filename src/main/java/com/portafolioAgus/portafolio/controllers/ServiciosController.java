@@ -35,7 +35,6 @@ public class ServiciosController {
     }
 
 
-
     @PostMapping("/agregar")
     public ResponseEntity<?> agregarProyectos(@RequestBody ServicioAplicationDTO servicioAplicationDTO) {
         String nombre = servicioAplicationDTO.getNombre();
@@ -87,7 +86,7 @@ public class ServiciosController {
 
         serviciosServicies.saveServicios(servicioActulizado);
 
-        return new ResponseEntity<>("Servicio Actualizado", HttpStatus.CREATED);
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
     @DeleteMapping("/borrar/{id}")

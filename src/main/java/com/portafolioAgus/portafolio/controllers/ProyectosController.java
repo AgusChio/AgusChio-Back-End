@@ -55,7 +55,7 @@ public class ProyectosController {
             new ResponseEntity<>("Descripcion Vacia", HttpStatus.FORBIDDEN);
         }
 
-        if (proyectos.getFechaRealizacion() == null){
+        if (proyectos.getFechaRealizacion().isEmpty()){
             new ResponseEntity<>("Por favor, ingrese una fecha de realización del proyecto ", HttpStatus.FORBIDDEN);
         }
 
@@ -103,7 +103,7 @@ public class ProyectosController {
             new ResponseEntity<>("Descripcion Vacia", HttpStatus.FORBIDDEN);
         }
 
-        if (proyectos.getFechaRealizacion() == null){
+        if (proyectos.getFechaRealizacion().isEmpty()){
             new ResponseEntity<>("Por favor, ingrese una fecha de realización del proyecto ", HttpStatus.FORBIDDEN);
         }
 
@@ -134,7 +134,7 @@ public class ProyectosController {
 
         proyectosServicies.saveProyectos(proyectoActualizado);
 
-        return new ResponseEntity<>("Proyecto Actualizado" , HttpStatus.CREATED);
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
 

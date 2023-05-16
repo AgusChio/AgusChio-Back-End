@@ -104,7 +104,7 @@ public class SkillController {
 
         skillServicies.saveSkills(skillActualizada);
 
-        return new ResponseEntity<>("Skill Actualizada", HttpStatus.CREATED);
+        return new ResponseEntity<>( HttpStatus.ACCEPTED);
     }
 
     @DeleteMapping("/borrar/{id}")

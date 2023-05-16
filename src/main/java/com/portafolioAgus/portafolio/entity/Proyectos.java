@@ -23,7 +23,7 @@ public class Proyectos {
 
     private String descripcion;
 
-    private LocalDate fechaRealizacion;
+    private String fechaRealizacion;
     private String urlVideo;
 
     private String urlGitHub;
@@ -33,7 +33,7 @@ public class Proyectos {
     @ManyToOne
     private Persona persona;
 
-    public Proyectos(String nombreProyecto, String imagen, String descripcion,LocalDate fechaRealizacion ,String urlVideo, String urlGitHub, String urlDeploy, Persona persona) {
+    public Proyectos(String nombreProyecto, String imagen, String descripcion,String fechaRealizacion ,String urlVideo, String urlGitHub, String urlDeploy, Persona persona) {
         this.nombreProyecto = nombreProyecto;
         this.imagen = imagen;
         this.descripcion = descripcion;

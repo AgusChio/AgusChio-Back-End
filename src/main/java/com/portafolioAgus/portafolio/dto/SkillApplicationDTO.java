@@ -6,8 +6,6 @@ import lombok.Getter;
 
 @Getter
 public class SkillApplicationDTO {
-    private long id;
-
     private String nombreSkill;
 
     private int porcentaje;

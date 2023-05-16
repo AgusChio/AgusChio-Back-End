@@ -12,9 +12,9 @@ public class EducacionAplicationDTO {
 
     private String entidadEducativa;
 
-    private LocalDate inicio;
+    private String inicio;
 
-    private LocalDate fin;
+    private String fin;
 
     private String imagenCertificado;
 

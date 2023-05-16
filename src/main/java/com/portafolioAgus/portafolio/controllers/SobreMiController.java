@@ -90,7 +90,7 @@ public class SobreMiController {
 
         sobreMiServicies.saveSobreMi(sobreMiActualizado);
 
-        return new ResponseEntity<>("Sobre Mi Actualizado", HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
 

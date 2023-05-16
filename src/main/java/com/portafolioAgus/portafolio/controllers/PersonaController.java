@@ -95,7 +95,7 @@ public class PersonaController {
 
         personaServicies.savePersona(personaActualizada);
 
-        return new ResponseEntity<>("Persona Actualizada", HttpStatus.CREATED);
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
     @DeleteMapping("/borrar/{id}")

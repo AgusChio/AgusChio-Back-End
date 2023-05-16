@@ -16,7 +16,7 @@ public class ProyectosDTO {
 
     private String descripcion;
 
-    private LocalDate fechaRealizacion;
+    private String fechaRealizacion;
 
     private String urlVideo;
 

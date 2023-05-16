@@ -20,16 +20,16 @@ public class Educacion {
 
     private String entidadEducativa;
 
-    private LocalDate inicio;
+    private String inicio;
 
-    private LocalDate fin;
+    private String fin;
 
     private String imagenCertificado;
 
     @ManyToOne
     private Persona persona;
 
-    public Educacion(String titulo, String entidadEducativa, LocalDate inicio, LocalDate fin, String imagenCertificado, Persona persona) {
+    public Educacion(String titulo, String entidadEducativa, String inicio, String fin, String imagenCertificado, Persona persona) {
         this.titulo = titulo;
         this.entidadEducativa = entidadEducativa;
         this.inicio = inicio;

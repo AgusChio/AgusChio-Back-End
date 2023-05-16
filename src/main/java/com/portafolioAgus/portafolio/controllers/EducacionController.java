@@ -43,29 +43,20 @@ public class EducacionController {
 
         Persona persona = personaServicies.buscarPorNombreYApellido(nombre, apellido);
 
-
         if (educacion.getEntidadEducativa().isEmpty()){
             return new ResponseEntity<>("Nombre de la entidad educativa vacia", HttpStatus.FORBIDDEN);
         }
 
-        if (educacion.getInicio() == null){
+        if (educacion.getInicio().isEmpty()){
             return new ResponseEntity<>("Fecha de inicio vacia", HttpStatus.FORBIDDEN);
         }
 
-        if (educacion.getFin() == null){
+        if (educacion.getFin().isEmpty()){
             return new ResponseEntity<>("Fecha de fin vacia", HttpStatus.FORBIDDEN);
         }
 
         if (educacion.getInicio().equals(educacion.getFin()) || educacion.getFin().equals(educacion.getInicio())){
             return new ResponseEntity<>("La fecha de inicio no puede ser igual a la fecha final o viceversa", HttpStatus.FORBIDDEN);
-        }
-
-        if (educacion.getInicio().isAfter(educacion.getFin())){
-            return new ResponseEntity<>("La fecha inicial no puede ser posterior a la fecha final", HttpStatus.FORBIDDEN);
-        }
-
-        if (educacion.getFin().isBefore(educacion.getInicio())){
-            return new ResponseEntity<>("La fecha final no puede ser antes a la fecha inicial", HttpStatus.FORBIDDEN);
         }
 
         if (educacion.getTitulo().isEmpty()){
@@ -98,24 +89,16 @@ public class EducacionController {
             return new ResponseEntity<>("Nombre de la entidad educativa vacia", HttpStatus.FORBIDDEN);
         }
 
-        if (educacion.getInicio() == null){
+        if (educacion.getInicio().isEmpty()){
             return new ResponseEntity<>("Fecha de inicio vacia", HttpStatus.FORBIDDEN);
         }
 
-        if (educacion.getFin() == null){
+        if (educacion.getFin().isEmpty()){
             return new ResponseEntity<>("Fecha de fin vacia", HttpStatus.FORBIDDEN);
         }
 
         if (educacion.getInicio().equals(educacion.getFin()) || educacion.getFin().equals(educacion.getInicio())){
             return new ResponseEntity<>("La fecha de inicio no puede ser igual a la fecha final o viceversa", HttpStatus.FORBIDDEN);
-        }
-
-        if (educacion.getInicio().isAfter(educacion.getFin())){
-            return new ResponseEntity<>("La fecha inicial no puede ser posterior a la fecha final", HttpStatus.FORBIDDEN);
-        }
-
-        if (educacion.getFin().isBefore(educacion.getInicio())){
-            return new ResponseEntity<>("La fecha final no puede ser antes a la fecha inicial", HttpStatus.FORBIDDEN);
         }
 
         if (educacion.getTitulo().isEmpty()){
@@ -139,7 +122,7 @@ public class EducacionController {
 
         educacionServicies.saveEducacion(educacionActualizada);
 
-        return new ResponseEntity<>("Educacion Actualizada", HttpStatus.CREATED);
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
 
