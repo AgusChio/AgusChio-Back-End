@@ -79,7 +79,7 @@ public class ProyectosController {
         Proyectos proyectoNuevo = new Proyectos(proyectos.getNombreProyecto(), proyectos.getImagen(), proyectos.getDescripcion(),proyectos.getFechaRealizacion(), proyectos.getUrlVideo(), proyectos.getUrlGitHub(), proyectos.getUrlDeploy(), persona);
         proyectosServicies.saveProyectos(proyectoNuevo);
 
-        return new ResponseEntity<>("Proyecto Creado", HttpStatus.CREATED);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
 
@@ -142,6 +142,6 @@ public class ProyectosController {
     @DeleteMapping("/borrar/{id}")
     public ResponseEntity<?> eliminarProyecto(@PathVariable Long id) {
         proyectosServicies.deleteProyectosById(id);
-        return new ResponseEntity<>("Proyecto Eliminado" , HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 }

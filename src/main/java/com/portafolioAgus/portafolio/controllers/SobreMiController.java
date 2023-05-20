@@ -57,7 +57,7 @@ public class SobreMiController {
         SobreMi sobreMiNuevo = new SobreMi(sobreMi.getParrafo1(), sobreMi.getParrafo2(), sobreMi.getCv(), persona);
         sobreMiServicies.saveSobreMi(sobreMiNuevo);
 
-        return new ResponseEntity<>("Sobre Mi Creado", HttpStatus.CREATED);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PutMapping("/actualizar/{id}")
@@ -98,7 +98,7 @@ public class SobreMiController {
     @DeleteMapping("/borrar/{id}")
     public ResponseEntity<?> deleteSobreMiById(@PathVariable Long id) {
         sobreMiServicies.deleteSobreMiById(id);
-        return new ResponseEntity<>("Sobre Mi Eliminado" , HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
 }

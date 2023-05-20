@@ -58,7 +58,7 @@ public class ServiciosController {
         Servicios servicioNuevo = new Servicios(servicioAplicationDTO.getTituloServicio(), servicioAplicationDTO.getDescripcion(), persona);
         serviciosServicies.saveServicios(servicioNuevo);
 
-        return new ResponseEntity<>("Servicio Creado", HttpStatus.CREATED);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PutMapping("/actualizar/{id}")
@@ -93,6 +93,6 @@ public class ServiciosController {
     @DeleteMapping("/borrar/{id}")
     public ResponseEntity<?> deleteById(@PathVariable Long id) {
         serviciosServicies.deleteServiciosById(id);
-        return new ResponseEntity<>("Servicio Eliminado" , HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 }

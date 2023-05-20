@@ -75,7 +75,7 @@ public class EducacionController {
         Educacion nuevaEducacion = new Educacion(educacion.getTitulo(), educacion.getEntidadEducativa(),educacion.getInicio(),educacion.getFin(), educacion.getImagenCertificado(), persona);
         educacionServicies.saveEducacion(nuevaEducacion);
 
-        return new ResponseEntity<>("Educacion Creada", HttpStatus.CREATED);
+        return new ResponseEntity<>( HttpStatus.CREATED);
     }
 
     @PutMapping("/actualizar/{id}")
@@ -130,6 +130,6 @@ public class EducacionController {
     @DeleteMapping("/borrar/{id}")
     public ResponseEntity<?> eliminarCertificacion(@PathVariable Long id) {
         educacionServicies.deleteEducacionById(id);
-        return new ResponseEntity<>("Educacion Eliminada", HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 }

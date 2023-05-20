@@ -65,7 +65,7 @@ public class SkillController {
         Skills skillsNuevo = new Skills(skill.getNombreSkill(), skill.getPorcentaje(), skill.getImgsrc(), skill.getColorInterno(), skill.getColorExterno(),skill.getTypeSkills(), persona);
         skillServicies.saveSkills(skillsNuevo);
 
-        return new ResponseEntity<>("Skill creada", HttpStatus.CREATED);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PutMapping("/actualizar/{id}")
@@ -111,6 +111,6 @@ public class SkillController {
     @DeleteMapping("/borrar/{id}")
     public ResponseEntity<?> deleteSkillById(@PathVariable Long id) {
         skillServicies.deleteSkills(id);
-        return new ResponseEntity<>("Skill Eliminada" , HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 }
